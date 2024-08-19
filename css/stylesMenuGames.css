@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body, html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgb(32,21,42);
+    background: linear-gradient(180deg, rgba(85,23,145,1) 20%, rgba(32,21,42,1) 90%) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container-img {
+    display: grid;
+    position: relative;
+    place-items: center;
+    height: 100vh;
+}
+
+.background-image img {
+    width: 1200px;
+    max-width: 100%;
+}
+
+
+/*Cards aplica css grid 1fr para cada juego*/
+.container {
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    align-items: center;
+    padding: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+}
+
+.cards-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.199); /* Ajusta los valores según tus preferencias */
+}
+
+
+.content-text {
+    display: absolute;
+    justify-content: center;
+    position: absolute;
+    bottom: -65px; 
+    width: 100%;
+}
+
+.content-text img {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    place-items: center;
+    box-shadow: 2px 30px 16px rgba(0, 0, 0, 0.452); /* Ajusta los valores según tus preferencias */
+
+}
+
+.content-text h2 {
+    color: white;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*footer*/
+
+footer {
+    position: relative;
+    display: flex;
+    margin-left: 50px;
+    margin-top: -150px;
+}
+
+.contenedor {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+}
+
+.text-developer {
+    margin-bottom: 20px;
+}
+
+.text-developer h3 {
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.reverse {
+    margin-right: 50px;
+    border: none;
+    color: transparent;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    text-decoration: none; 
+    margin-top: 40px;
+}
+
+/*responsivo*/
+
+/*para menor a 1024 no sera compatible*/
+
+.incompatibility-message {
+    display: none;
+}
+
+@media (max-width: 1020px) {
+    .incompatibility-message {
+        display: flex; /* Cambiar a flexbox para centrar */
+        flex-direction: column; /* Alinear verticalmente */
+        align-items: center; /* Centrar horizontalmente */
+        justify-content: center; /* Centrar verticalmente */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        text-align: center;
+        z-index: 1000;
+        background: linear-gradient(180deg, rgba(85,23,145,1) 20%, rgba(32,21,42,1) 90%) no-repeat;
+    }
+
+    .incompatibility-message h1 {
+        margin: 20px 0;
+    }
+
+    .incompatibility-message img {
+        max-width: 80%; /* Ajusta el tamaño máximo de la imagen */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 20px 0; /* Espaciado alrededor de la imagen */
+    }
+
+    footer, .container {
+        display: none;
+    }
+
+    .background-image img {
+        display: none;
+    }
+}
+
+
+

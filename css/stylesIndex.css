@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    background: rgb(32,21,42);
+    background: linear-gradient(180deg, rgba(32,21,42,1) 60%, rgba(85,23,145,1) 100%) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    max-width: 100%;
+}
+
+/* Styles Header*/
+header {
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+header nav{
+    color: white;
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding-right: 10px;
+    font-size: 1.4em;
+    padding-right: 60px;
+    position: relative; /
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 0;
+    height: 2px; 
+    background-color: white;
+    transition: width 0.3s ease; 
+}
+
+nav a:hover::after {
+    width: 50%;
+}
+
+/*Texto Main y img*/
+
+.page-main {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+}
+
+.text-main {
+    position: relative;
+    color: white;
+    width: 50%;
+    padding: 60px;
+    margin-top:60px;
+}
+
+.text-main h1{
+    padding-bottom: 30px;
+    font-size: 3.5em;
+}
+
+.text-main h2{
+    padding-bottom: 30px;
+    font-size: 2em;
+}
+
+.image-main {
+    display: block;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 500px;
+    height: 500px;
+    z-index: 2;
+}
+
+.image-main img {
+    scale: 10%;
+}
+
+.background-index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: -1;
+    padding-right: 30px; 
+}
+
+.background-index img {
+    width: 690px;
+}
+
+/*Boton "Empezar a jugar"*/
+
+.button {
+    display: inline-block; /* Asegura que se comporte como un botón */
+    text-align: center; /* Centra el texto dentro del botón */
+    width: 220px;
+    height: 52px;
+    line-height: 52px; /* Centra el texto verticalmente */
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 30px;
+    border: none;
+    background: #3f1b7c;
+    box-shadow: 0 0.1rem 0.8rem rgba(85,23,145,1);
+    transition: box-shadow 0.25s ease 0s;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.button:hover {
+    background: linear-gradient(117deg, rgb(68, 10, 145), rgb(117, 40, 189));
+    box-shadow: 0 0.1rem 0.8rem rgb(92, 29, 151);
+    cursor: pointer;
+}
+/*responsivo*/
+
+/*para menor a 1024 no sera compatible*/
+
+.incompatibility-message {
+    display: none;
+}
+
+@media (max-width: 1020px) {
+    .incompatibility-message {
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        text-align: center;
+        z-index: 1000;
+        background: linear-gradient(180deg, rgba(85,23,145,1) 20%, rgba(32,21,42,1) 90%) no-repeat;
+    }
+
+    .incompatibility-message h1 {
+        display: flex;
+        margin: 20px 0;
+    }
+
+    .incompatibility-message img {
+        max-width: 80%; 
+        height: auto; 
+        margin: 20px 0; 
+    }
+
+    .page-main, header{
+        width: auto;
+        height: auto;
+        min-height: 100vh;
+        display: none;
+    }
+}
+
+/* Media Queries */
+
+@media (max-width: 1201px) {
+    .text-main {
+        padding: 30px;
+    }
+
+    .text-main h1 {
+        font-size: 2em;
+    }
+
+    .text-main h2 {
+        font-size: 1.2em;
+    }
+
+    .image-main {
+        height: 200px;
+        width: 200px;
+    }
+
+    .image1 {
+        width: 400px;
+        height: 400px;
+    }
+
+    .image2 {
+        height: 400px;
+        width: 400px;
+    }
+
+    .text-main button {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+
+
+
