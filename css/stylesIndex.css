@@ -11,8 +11,44 @@ body {
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-    max-width: 100%;
 }
+
+.text-1 {
+    grid-area: "a";
+}
+
+.text-2 {
+    grid-area: "b";
+}
+
+.text-3 {
+    grid-area: "c";
+}
+
+#text {
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    color: #fff;
+    opacity: 0.02;
+    font-size: 10em;
+    justify-content: start;
+    align-items:center;
+    background-color: transparent;
+    row-gap: 5px;
+    padding-left: 20px;
+    grid-template: 
+        "a"
+        "b"
+        "c";
+}
+
 
 /* Styles Header*/
 header {
@@ -22,26 +58,27 @@ header {
     height: auto;
 }
 
-header nav{
-    color: white;
+ul{
     display: flex;
+    color: white;
     height: 60px;
     justify-content: flex-end;
     align-items: center;
     padding: 40px;
+    gap: 50px;
 }
 
-nav a {
+.navbar-item {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: white;
     font-weight: 600;
-    padding-right: 10px;
     font-size: 1.4em;
-    padding-right: 60px;
-    position: relative; /
+    position: relative;
 }
 
-nav a::after {
+.navbar-item p::after {
     content: "";
     position: absolute;
     left: 0;
@@ -52,85 +89,87 @@ nav a::after {
     transition: width 0.3s ease; 
 }
 
-nav a:hover::after {
-    width: 50%;
+.navbar-item p:hover::after {
+    width: 100%;
 }
 
-/*Texto Main y img*/
+/* Texto Main y img */
+.main-part {
+    display: flex;
+    justify-content: space-around; 
+    position: relative;
+    width: 100%;
+}
 
 .page-main {
-    display: flex;
-    position: relative;
+    display: block;
     width: 100%;
     align-items: center;
 }
 
 .text-main {
-    position: relative;
     color: white;
-    width: 50%;
+    width: 100%;
     padding: 60px;
-    margin-top:60px;
+    margin-top: 120px;
+    position: relative; 
 }
 
-.text-main h1{
+.text-main h1 {
     padding-bottom: 30px;
     font-size: 3.5em;
 }
 
-.text-main h2{
+.text-main h2 {
     padding-bottom: 30px;
     font-size: 2em;
 }
 
-.image-main {
-    display: block;
-    position: absolute;
-    left: 0;
-    top:0;
-    width: 500px;
-    height: 500px;
-    z-index: 2;
-}
-
-.image-main img {
-    scale: 10%;
-}
-
-.background-index {
+/* Section images */
+.background-index, .image-main {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: -1;
-    padding-right: 30px; 
+    right: 50px; 
+    margin-bottom: 10px;
+
+}
+
+.background-index{
+    margin-bottom: 10px;
 }
 
 .background-index img {
-    width: 690px;
+    width: 670px;
+    z-index: -2; 
 }
+
+.image-main img {
+    width: 600px;
+    z-index: 0;
+}
+
+.background-index, .image-main {
+    display: inline-block; 
+}
+
 
 /*Boton "Empezar a jugar"*/
 
 .button {
-    display: inline-block; /* Asegura que se comporte como un botón */
-    text-align: center; /* Centra el texto dentro del botón */
+    display: inline-block; 
+    text-align: center; 
     width: 220px;
     height: 52px;
-    line-height: 52px; /* Centra el texto verticalmente */
+    line-height: 52px; 
     cursor: pointer;
     color: #fff;
     font-size: 17px;
     border-radius: 30px;
     border: none;
-    background: #3f1b7c;
+    background: #7b2cbf;
     box-shadow: 0 0.1rem 0.8rem rgba(85,23,145,1);
-    transition: box-shadow 0.25s ease 0s;
-    text-decoration: none; /* Elimina el subrayado del enlace */
+    transition: all 0.6s ease;
+    text-decoration: none; 
 }
 
 .button:hover {
@@ -179,43 +218,6 @@ nav a:hover::after {
         height: auto;
         min-height: 100vh;
         display: none;
-    }
-}
-
-/* Media Queries */
-
-@media (max-width: 1201px) {
-    .text-main {
-        padding: 30px;
-    }
-
-    .text-main h1 {
-        font-size: 2em;
-    }
-
-    .text-main h2 {
-        font-size: 1.2em;
-    }
-
-    .image-main {
-        height: 200px;
-        width: 200px;
-    }
-
-    .image1 {
-        width: 400px;
-        height: 400px;
-    }
-
-    .image2 {
-        height: 400px;
-        width: 400px;
-    }
-
-    .text-main button {
-        width: 150px;
-        height: 40px;
-        font-size: 14px;
     }
 }
 

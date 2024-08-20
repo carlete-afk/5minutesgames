@@ -13,8 +13,7 @@
         <nav>
             <ul>
                 <a href="index.html">Inicio</a>
-                <a href="">Tutorial</a>
-                <a href="Nosotros.html">Quien Somos</a>
+                <a href="Nosotros.html">Contacto</a>
                 <a href="MenuGames.html">Juegos</a>
             </ul>
         </nav>
@@ -31,7 +30,6 @@
                 vero minima molestias modi voluptate vitae nulla neque blanditiis.</p>
             <div class="content-contact">
                 <h1>Nuestro Contacto: <a href="mailto:FiveMinutesGamess@gmail.com">FiveMinutesGamess@gmail.com</a></h1>
-                
             </div>
         </div>
     </section>
@@ -60,5 +58,19 @@
             </div>
         </div>
     </section>
+
+    <script href="../js/Contact.js">
+        const $form = document.querySelector('#form')
+        const $buttonMailto = document.querySelector('#trucazo')
+            
+        $form.addEventListener('submit', handleSubmit)
+            
+            function handleSubmit(event) {
+                event.preventDefault()
+                const form = new FormData(this)
+                $buttonMailto.setAttribute('href', `mailto:FiveMinutesGamess@gmail.com?subject=nombre ${form.get('Nombre Usuario')}  correo ${form.get('Email Contacto')} body=${form.get('Escribe tu mensaje')}`)
+                $buttonMailto.click()
+            }
+    </script>
 </body>
 </html>
