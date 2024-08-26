@@ -2,11 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial;
 }
 
-body, html {
-    margin: auto;
-    position: relative;
+html {
+    scrollbar-width: none;
+}
+
+body {
     background: rgb(32,21,42);
     background: linear-gradient(180deg, rgba(32,21,42,1) 60%, rgba(85,23,145,1) 100%) no-repeat;
     background-size: cover;
@@ -14,32 +17,86 @@ body, html {
     min-height: 100vh;
 }
 
-header {
-    display: flex;
-    position: relative;
+/*texto de fondo*/
+
+.text-1 {
+    grid-area: "a";
+}
+
+.text-2 {
+    grid-area: "b";
+}
+
+.text-3 {
+    grid-area: "c";
+}
+
+#text {
+    display: grid;
+    position: absolute;
     top: 0;
     left: 0;
-    background-color: transparent;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    justify-content: end;
+    height: 100%;
+    z-index: -10;
+    color: #fff;
+    opacity: 0.02;
+    font-size: 10em;
+    justify-content: start;
+    align-items:center;
+    background-color: transparent;
+    row-gap: 5px;
+    padding-left: 20px;
+    grid-template: 
+        "a"
+        "b"
+        "c";
 }
 
-header nav{
-    color: white;
+/* Styles Header*/
+header {
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+ul{
     display: flex;
-    height: 100px;
+    color: white;
+    height: 60px;
+    justify-content: flex-end;
     align-items: center;
     padding: 40px;
+    gap: 50px;
+    margin-right: 50px;
 }
 
-nav a {
-    width: 100%;
+.navbar-item {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: white;
     font-weight: 600;
-    padding-right: 10px;
     font-size: 1.4em;
-    padding-right: 60px;
+    position: relative;
+}
+
+.navbar-item p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 0;
+    height: 2px; 
+    background-color: white;
+    transition: width 0.3s ease; 
+}
+
+.navbar-item p:hover::after {
+    width: 100%;
 }
 
 .Section-2 {
@@ -66,6 +123,11 @@ nav a {
 .content-contact {
     display: block;
     position: relative;
+}
+
+.content-contact a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .content-contact h1 {

@@ -12,12 +12,18 @@
     <header>
         <nav>
             <ul>
-                <a href="index.html">Inicio</a>
-                <a href="Nosotros.html">Contacto</a>
-                <a href="MenuGames.html">Juegos</a>
+                <a class="navbar-item" href="index.html"><p>Inicio</p></a>
+                <a class="navbar-item" href="Nosotros.html"><p>Contacto</p></a>
+                <a class="navbar-item" href="MenuGames.html"><p>Juegos</p></a>
             </ul>
         </nav>
     </header>
+
+    <span id="text">
+        <p class="text-1"><strong>5MintuesGames</strong></p>
+        <p class="text-2"><strong>5MintuesGames</strong></p>
+        <p class="text-3"><strong>5MintuesGames</strong></p>
+    </span>
 
     <section class="Section-2">
         <div class="text-aboutus">
@@ -40,7 +46,7 @@
                 <div class="contact-form">
                     <form action="" id="form" class="form">
                         <p>
-                            <label for="name">FullName</label>
+                            <label for="name">Asunto</label>
                             <input class="input" placeholder="Nombre/name" name="name" required type="text" id="name"><span class="input-border"></span>
                         </p>
                         <p>
@@ -48,7 +54,7 @@
                             <input class="input" placeholder="Email" name="email" required type="email" id="email">
                         </p>
                         <p class="block">
-                            <label for="message">Message</label> 
+                            <label for="message">Mensaje</label> 
                             <textarea id="message" name="message" cols="30" rows="10"></textarea>
                         </p>
                         <button class="block" type="submit">enviar mensaje</button>               
