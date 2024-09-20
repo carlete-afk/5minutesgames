@@ -43,7 +43,7 @@
                         
                         Puedes contactarnos con el siguiente Mail: <a href="mailto:FiveMinutesGamess@gmail.com">FiveMinutesGamess@gmail.com</a> <br>
                         <br>
-                        ¡Disfruta nuestro juegos! <br>
+                        ¡Disfruta nuestros juegos! <br>
                         <br>
                         Equipo 5MintuesGames </h3>
                 </div>
@@ -54,7 +54,8 @@
                         <form action="" id="form" class="form">
                             <p>
                                 <label for="name">Asunto</label>
-                                <input class="input" placeholder="Nombre/name" name="name" required type="text" id="name"><span class="input-border"></span>
+                                <input class="input" placeholder="Nombre/name" name="name" required type="text" id="name">
+                                <span class="input-border"></span>
                             </p>
                             <p>
                                 <label for="email">Email</label>
@@ -74,17 +75,24 @@
     </section>
         
     <script href="../js/Contact.js">
+        document.addEventListener('DOMContentLoaded', function() {
         const $form = document.querySelector('#form')
         const $buttonMailto = document.querySelector('#trucazo')
-            
+
         $form.addEventListener('submit', handleSubmit)
+
+        function handleSubmit(event) {
+            event.preventDefault()
+            const form = new FormData($form)
             
-            function handleSubmit(event) {
-                event.preventDefault()
-                const form = new FormData(this)
-                $buttonMailto.setAttribute('href', `mailto:FiveMinutesGamess@gmail.com?subject=nombre ${form.get('Nombre Usuario')}  correo ${form.get('Email Contacto')} body=${form.get('Escribe tu mensaje')}`)
-                $buttonMailto.click()
-            }
+            const name = form.get('name')
+            const email = form.get('email')
+            const message = form.get('message')
+
+            $buttonMailto.setAttribute('href', `mailto:FiveMinutesGamess@gmail.com?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(message)} - Contacto: ${encodeURIComponent(email)}`)
+            $buttonMailto.click()
+        }
+    })
     </script>
 </body>
 </html>

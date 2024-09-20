@@ -22,8 +22,6 @@ body, html {
 .Background {
     position: absolute;
     display: block;
-    align-items: center;
-    justify-content: space-between;
     top: 0;
     left: 0;
     width: 100%;
@@ -116,6 +114,30 @@ footer {
     cursor: pointer;
     text-decoration: none;
     font-size: 1.3em;
+}
+
+.return-index {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.4em;
+    position: relative;
+}
+
+.return-index a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 0;
+    height: 2px; 
+    background-color: white;
+    transition: width 0.3s ease; 
+}
+
+.return-index a:hover::after {
+    width: 11%;
 }
 
 /* Header */

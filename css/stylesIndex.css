@@ -167,16 +167,17 @@ ul{
     border-radius: 30px;
     border: none;
     background: #7b2cbf;
-    box-shadow: 0 0.1rem 0.8rem rgba(85,23,145,1);
-    transition: all 0.6s ease;
+    box-shadow: 0 0.1rem 0.8rem rgba(85, 23, 145, 1);
+    transition: all 0.5s ease-out;
     text-decoration: none; 
 }
 
-.button:hover {
-    background: linear-gradient(117deg, rgb(68, 10, 145), rgb(117, 40, 189));
-    box-shadow: 0 0.1rem 0.8rem rgb(92, 29, 151);
-    cursor: pointer;
+.button:hover, .button:focus{
+    background: rgb(68, 10, 145);
+    box-shadow: 0 0.2rem 1rem rgba(85, 23, 145, 0.6);
+    color: #fff;
 }
+
 /*responsivo*/
 
 /*para menor a 1024 no sera compatible*/
