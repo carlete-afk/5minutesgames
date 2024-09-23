@@ -121,23 +121,8 @@ footer {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    font-size: 1.4em;
+    font-size: 1.0rem;
     position: relative;
-}
-
-.return-index a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px; 
-    width: 0;
-    height: 2px; 
-    background-color: white;
-    transition: width 0.3s ease; 
-}
-
-.return-index a:hover::after {
-    width: 11%;
 }
 
 /* Header */
