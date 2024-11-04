@@ -31,12 +31,12 @@
                 <h1>¡Sobre Nosotros!</h1>
                 <div class="text-info">
                     <h3>5MinutesGames es una plataforma de juegos gratuito
-                        desarrollado por los estudiantes de la <a id="linkEscuela" href="https://et12.edu.ar/">Tecnica N°12 Libertador General José de San Martín:</a><br>
-                        &#129299; Carlos Bello, GitHub <a href="https://github.com/carlosb-dev">carlosb-dev</a> <br>
-                        &#129497; Francisco García, Github <a href="https://github.com/SirFrancis2007">SirFrancis2007</a> <br>
-                        &#127955; Jorge Casco, GitHub <a href="https://github.com/jorge-link">jorge-link</a> <br>
-                        &#128018; Walter Benitez, GitHub <a href="https://github.com/Walter-Cooking">Walter-Cooking</a> <br>
-                        &#129312; Guido Gavilan, GitHub <a href="https://github.com/guido-rar">guido-rar</a> <br>
+                        desarrollado por los estudiantes de la <a target="_blank" id="linkEscuela" href="https://et12.edu.ar/">Tecnica N°12 Libertador General José de San Martín:</a><br>
+                        &#129299; Carlos Bello, GitHub <a target="_blank" href="https://github.com/carlosb-dev">carlosb-dev</a> <br>
+                        &#129497; Francisco García, Github <a target="_blank" href="https://github.com/SirFrancis2007">SirFrancis2007</a> <br>
+                        &#127955; Jorge Casco, GitHub <a target="_blank" href="https://github.com/jorge-link">jorge-link</a> <br>
+                        &#128018; Walter Benitez, GitHub <a target="_blank" href="https://github.com/Walter-Cooking">Walter-Cooking</a> <br>
+                        &#129312; Guido Gavilan, GitHub <a target="_blank" href="https://github.com/guido-rar">guido-rar</a> <br>
                         Todo el codigo fuente esta disponible en el repositorio github:
                         <a href="https://github.com/carlete-afk/5minutesgames">Repositorio GitHub</a> <br>
                         
@@ -75,23 +75,23 @@
         
     <script href="../js/Contact.js">
         document.addEventListener('DOMContentLoaded', function() {
-        const $form = document.querySelector('#form')
-        const $buttonMailto = document.querySelector('#trucazo')
+            const $form = document.querySelector('#form')
+            const $buttonMailto = document.querySelector('#trucazo')
 
-        $form.addEventListener('submit', handleSubmit)
+            $form.addEventListener('submit', handleSubmit)
 
-        function handleSubmit(event) {
-            event.preventDefault()
-            const form = new FormData($form)
-            
-            const name = form.get('name')
-            const email = form.get('email')
-            const message = form.get('message')
+            function handleSubmit(event) {
+                event.preventDefault()
+                const form = new FormData($form)
+                
+                const name = form.get('name')
+                const email = form.get('email')
+                const message = form.get('message')
 
-            $buttonMailto.setAttribute('href', `mailto:FiveMinutesGamess@gmail.com?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(message)} - Contacto: ${encodeURIComponent(email)}`)
-            $buttonMailto.click()
-        }
-    })
+                $buttonMailto.setAttribute('href', `mailto:FiveMinutesGamess@gmail.com?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(message)} - Contacto: ${encodeURIComponent(email)}`)
+                $buttonMailto.click()
+            }
+        })
     </script>
 </body>
 </html>
